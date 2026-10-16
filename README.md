@@ -5,7 +5,7 @@
 
 ## いちばん簡単な起動方法
 
-Finder でこの `webapp` フォルダを開き、**`アプリを起動.command` をダブルクリック**します。
+Finder でこのフォルダ（Optimal-Sensor-Placement-in-Two-Dimensions）を開き、**`アプリを起動.command` をダブルクリック**します。
 少し待つとブラウザが開くので、「QUBOを実行」を押してください。
 止めるときは、一緒に開いたターミナルの画面を閉じます。
 
@@ -17,15 +17,15 @@ Finder でこの `webapp` フォルダを開き、**`アプリを起動.command`
 3. 次の2行を1行ずつ貼り付けて Enter
 
    ```
-   cd webapp
+   cd Optimal-Sensor-Placement-in-Two-Dimensions
    ../.venv/bin/streamlit run app.py
    ```
 
 4. ブラウザが開きます（開かないときは http://localhost:8501 を開く）
 5. 止めるときはターミナルで `Ctrl + C`
 
-`zsh: no such file or directory` と出たら、`cd webapp` を忘れています。
-ターミナルの行の左に `webapp %` と出ていれば正しい場所です。
+`zsh: no such file or directory` と出たら、`cd Optimal-Sensor-Placement-in-Two-Dimensions` を忘れています。
+ターミナルの行の左に `Optimal-Sensor-Placement-in-Two-Dimensions %` と出ていれば正しい場所です。
 
 ## ファイルの中身
 
@@ -50,7 +50,7 @@ Finder でこの `webapp` フォルダを開き、**`アプリを起動.command`
 
 ```
 python3 -m venv .venv
-.venv/bin/pip install -r webapp/requirements.txt
+.venv/bin/pip install -r Optimal-Sensor-Placement-in-Two-Dimensions/requirements.txt
 ```
 
-そのあと `webapp/.streamlit/secrets.toml.example` をコピーして `secrets.toml` にし、自分のトークンを書きます。
+そのあと `.streamlit/secrets.toml.example` をコピーして `secrets.toml` にし、自分のトークンを書きます。
