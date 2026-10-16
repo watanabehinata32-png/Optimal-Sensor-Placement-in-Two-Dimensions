@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import json
+import os
 from amplify import VariableGenerator, AmplifyAEClient, solve, less_equal, greater_equal
 from datetime import timedelta
 from helpers import make_covers, coverage_reward, draw_map  # 長い計算と地図の描き方は helpers.py にある
@@ -12,11 +13,11 @@ st.set_page_config(page_title='センサー配置最適化', layout='wide')
 st.title('📡センサーを最適に配置しよう📡')
 st.write('センサーの性能や市町村の必要値を変えて、QUBOを実行すると、総コストと配置が地図でわかります')
 
-# アクセストークン（運営側の .streamlit/secrets.toml に書いてある AMPLIFY_TOKEN を読み込む）
+# アクセストークン（手元では .streamlit/secrets.toml、Render では Environment Variables の AMPLIFY_TOKEN を読み込む）
 try:
     token = st.secrets['AMPLIFY_TOKEN']
 except Exception:
-    token = ''
+    token = os.environ.get('AMPLIFY_TOKEN', '')
 
 # 計算の条件（サイドバーで設定する）
 with st.sidebar:
@@ -98,7 +99,7 @@ covers = make_covers(munis, px, py, pm, radius, grid, cross)
 button = st.button('QUBOを実行', type='primary')
 
 if button and not token:
-    st.error('Amplify のアクセストークンが設定されていません（.streamlit/secrets.toml の AMPLIFY_TOKEN）')
+    st.error('Amplify のアクセストークンが設定されていません（AMPLIFY_TOKEN）')
 
 elif button:
     # ============================================================
