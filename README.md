@@ -47,7 +47,6 @@
 | `helpers.py` | カバー率のマス目づくり、カバー率の報酬の式、地図の描画 |
 | `data/data_transformed.json` | 市町村の形、候補地点、センサーの性能のデータ |
 | `requirements.txt` | 必要なライブラリ |
-| `.streamlit/secrets.toml.example` | Amplify のアクセストークンの書き方の見本 |
 
 ## 手元で動かす方法
 
@@ -57,7 +56,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-`.streamlit/secrets.toml.example` をコピーして `.streamlit/secrets.toml` を作り、自分の Amplify のアクセストークンを書きます
+`.streamlit/secrets.toml` というファイルを作り、`AMPLIFY_TOKEN = "自分のトークン"` と1行書きます
 （このファイルは GitHub には上げません）。そのあと次のコマンドで起動します。
 
 ```
