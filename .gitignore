@@ -1,2 +1,6 @@
 .streamlit/secrets.toml
 __pycache__/
+.DS_Store
+
+# 自分のMacで起動するためのファイル（GitHub には上げない）
+アプリを起動.command
